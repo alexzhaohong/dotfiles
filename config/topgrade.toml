@@ -5,7 +5,7 @@ assume_yes = true
 disable = ["containers", "git_repos", "pnpm", "yarn"]
 
 # Display the time in step titles
-display_time = false
+display_time = true
 
 # Cleanup temporary or old files
 cleanup = true
