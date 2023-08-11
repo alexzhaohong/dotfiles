@@ -1,20 +1,20 @@
 tap "homebrew/cask"
-tap "homebrew/cask-drivers"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 
-cask "docker"
-cask "dropbox"
-cask "firefox"
-cask "font-fira-code"
-cask "font-hack"
-cask "google-chrome"
-cask "google-chrome-canary"
-cask "hammerspoon"
-cask "maccy"
-cask "raycast"
-cask "slack"
-cask "sourcetree"
-cask "spotify"
-cask "visual-studio-code"
-cask "vlc"
+cask "ngrok" # fastest way to expose local web servers to the internet
+cask "docker" # container orchestration
+cask "dropbox" # cloud storage
+cask "firefox" # Internet browser by Mozilla
+cask "font-fira-code" # Fira Mono, adding ligatures for common programming multi-character combinations
+cask "font-hack" # workhorse typeface for source code
+cask "google-chrome" # Internet browser
+cask "google-chrome-canary" # nightly builds for developers
+cask "hammerspoon" # windows manager
+cask "maccy" # clipboard manager for macOS
+cask "raycast" # extendable Spotlight launcher
+cask "slack" # messaging app
+cask "sourcetree" # Git client
+cask "spotify" # music player
+cask "visual-studio-code" # IDE
+cask "vlc" # cross-platform multimedia player
