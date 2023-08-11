@@ -1,7 +1,8 @@
-COMPUTER_NAME="Neo"
-LANGUAGES=(en nl)
-LOCALE="en_US@currency=EUR"
-MEASUREMENT_UNITS="Centimeters"
+# COMPUTER_NAME="Alex's Mac"
+# HOST_NAME="Alexs-Mac"
+LANGUAGES=(en)
+LOCALE="en_US@currency=USD"
+MEASUREMENT_UNITS="Inches"
 SCREENSHOTS_FOLDER="${HOME}/Screenshots"
 
 # Topics
@@ -32,28 +33,28 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 # Computer & Host name                                                        #
 ###############################################################################
 
-# Set computer name (as done via System Preferences → Sharing)
-sudo scutil --set ComputerName "$COMPUTER_NAME"
-sudo scutil --set HostName "$COMPUTER_NAME"
-sudo scutil --set LocalHostName "$COMPUTER_NAME"
-sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "$COMPUTER_NAME"
+# # Set computer name (as done via System Preferences → Sharing)
+# sudo scutil --set ComputerName "$COMPUTER_NAME"
+# sudo scutil --set HostName "$HOST_NAME"
+# sudo scutil --set LocalHostName "$HOST_NAME"
+# sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "$HOST_NAME"
 
 ###############################################################################
 # Localization                                                                #
 ###############################################################################
 
-# Set language and text formats
-defaults write NSGlobalDomain AppleLanguages -array ${LANGUAGES[@]}
-defaults write NSGlobalDomain AppleLocale -string "$LOCALE"
-defaults write NSGlobalDomain AppleMeasurementUnits -string "$MEASUREMENT_UNITS"
-defaults write NSGlobalDomain AppleMetricUnits -bool true
+# # Set language and text formats
+# defaults write NSGlobalDomain AppleLanguages -array ${LANGUAGES[@]}
+# defaults write NSGlobalDomain AppleLocale -string "$LOCALE"
+# defaults write NSGlobalDomain AppleMeasurementUnits -string "$MEASUREMENT_UNITS"
+# defaults write NSGlobalDomain AppleMetricUnits -bool true
 
-# Using systemsetup might give Error:-99, can be ignored (commands still work)
-# systemsetup manpage: https://ss64.com/osx/systemsetup.html
+# # Using systemsetup might give Error:-99, can be ignored (commands still work)
+# # systemsetup manpage: https://ss64.com/osx/systemsetup.html
 
-# Set the time zone
-sudo defaults write /Library/Preferences/com.apple.timezone.auto Active -bool YES
-sudo systemsetup -setusingnetworktime on
+# # Set the time zone
+# sudo defaults write /Library/Preferences/com.apple.timezone.auto Active -bool YES
+# sudo systemsetup -setusingnetworktime on
 
 ###############################################################################
 # System                                                                      #
@@ -78,8 +79,8 @@ sudo nvram StartupMute=%01
 # Menu bar: show battery percentage
 defaults write com.apple.menuextra.battery ShowPercent YES
 
-# Disable opening and closing window animations
-defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
+# # Disable opening and closing window animations
+# defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
 
 # Increase window resize speed for Cocoa applications
 defaults write NSGlobalDomain NSWindowResizeTime -float 0.001
@@ -92,8 +93,8 @@ defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
 defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
 defaults write NSGlobalDomain PMPrintingExpandedStateForPrint2 -bool true
 
-# Save to disk (not to iCloud) by default
-defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
+# # Save to disk (not to iCloud) by default
+# defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 
 # Automatically quit printer app once the print jobs complete
 defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
@@ -107,60 +108,60 @@ defaults write com.apple.systempreferences NSQuitAlwaysKeepsWindows -bool false
 # Disable the crash reporter
 defaults write com.apple.CrashReporter DialogType -string "none"
 
-# Disable Notification Center and remove the menu bar icon
-launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist 2> /dev/null
+# # Disable Notification Center and remove the menu bar icon
+# launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist 2> /dev/null
 
 ###############################################################################
 # Keyboard & Input                                                            #
 ###############################################################################
 
-# Disable smart quotes and dashes as they’re annoying when typing code
-defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
-defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
+# # Disable smart quotes and dashes as they’re annoying when typing code
+# defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
+# defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 
-# Enable full keyboard access for all controls
-# (e.g. enable Tab in modal dialogs)
-defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
+# # Enable full keyboard access for all controls
+# # (e.g. enable Tab in modal dialogs)
+# defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 
-# Disable press-and-hold for keys in favor of key repeat
-defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+# # Disable press-and-hold for keys in favor of key repeat
+# defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 
-# Set a blazingly fast keyboard repeat rate
-defaults write NSGlobalDomain KeyRepeat -int 1
-defaults write NSGlobalDomain InitialKeyRepeat -int 15
+# # Set a blazingly fast keyboard repeat rate
+# defaults write NSGlobalDomain KeyRepeat -int 1
+# defaults write NSGlobalDomain InitialKeyRepeat -int 15
 
-# Automatically illuminate built-in MacBook keyboard in low light
-defaults write com.apple.BezelServices kDim -bool true
+# # Automatically illuminate built-in MacBook keyboard in low light
+# defaults write com.apple.BezelServices kDim -bool true
 
-# Turn off keyboard illumination when computer is not used for 5 minutes
-defaults write com.apple.BezelServices kDimTime -int 300
+# # Turn off keyboard illumination when computer is not used for 5 minutes
+# defaults write com.apple.BezelServices kDimTime -int 300
 
-# Disable auto-correct
-defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
+# # Disable auto-correct
+# defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
 ###############################################################################
 # Trackpad, mouse, Bluetooth accessories                                      #
 ###############################################################################
 
-# Trackpad: enable tap to click for this user and for the login screen
-defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
-defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
-defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+# # Trackpad: enable tap to click for this user and for the login screen
+# defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
+# defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+# defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+# defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
-# Trackpad: map bottom right corner to right-click
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadCornerSecondaryClick -int 2
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightClick -bool true
-defaults -currentHost write NSGlobalDomain com.apple.trackpad.trackpadCornerClickBehavior -int 1
-defaults -currentHost write NSGlobalDomain com.apple.trackpad.enableSecondaryClick -bool true
+# # Trackpad: map bottom right corner to right-click
+# defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadCornerSecondaryClick -int 2
+# defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightClick -bool true
+# defaults -currentHost write NSGlobalDomain com.apple.trackpad.trackpadCornerClickBehavior -int 1
+# defaults -currentHost write NSGlobalDomain com.apple.trackpad.enableSecondaryClick -bool true
 
-# Trackpad: swipe between pages with three fingers
-defaults write NSGlobalDomain AppleEnableSwipeNavigateWithScrolls -bool true
-defaults -currentHost write NSGlobalDomain com.apple.trackpad.threeFingerHorizSwipeGesture -int 1
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerHorizSwipeGesture -int 1
+# # Trackpad: swipe between pages with three fingers
+# defaults write NSGlobalDomain AppleEnableSwipeNavigateWithScrolls -bool true
+# defaults -currentHost write NSGlobalDomain com.apple.trackpad.threeFingerHorizSwipeGesture -int 1
+# defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerHorizSwipeGesture -int 1
 
-# Increase sound quality for Bluetooth headphones/headsets
-defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
+# # Increase sound quality for Bluetooth headphones/headsets
+# defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
 
 ###############################################################################
 # Screen                                                                      #
