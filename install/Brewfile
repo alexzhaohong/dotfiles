@@ -16,7 +16,6 @@ brew "topgrade"
 brew "bat"
 brew "croc"
 brew "httpie"
-brew "ngrok"
 brew "ssh-copy-id"
 brew "tree"
 brew "unar"
@@ -35,7 +34,7 @@ brew "psgrep"
 brew "the_silver_searcher"
 
 # languages/tools
-brew "fnm"
+brew "fnm" # Fast and simple Node.js version manager
 brew "gh"
 brew "python"
 brew "rust"
@@ -48,4 +47,4 @@ brew "uni"
 brew "webp"
 
 # misc
-brew "grip"
+brew "grip" # GitHub Markdown previewer $ cd myrepo $ grip -b
