@@ -10,7 +10,8 @@ cask "font-fira-code" # Fira Mono, adding ligatures for common programming multi
 cask "font-hack" # workhorse typeface for source code
 cask "google-chrome" # Internet browser
 cask "google-chrome-canary" # nightly builds for developers
-cask "hammerspoon" # windows manager
+cask "hammerspoon" # automation keybinds
+cask "rectangle" # windows management
 cask "maccy" # clipboard manager for macOS
 cask "raycast" # extendable Spotlight launcher
 cask "slack" # messaging app

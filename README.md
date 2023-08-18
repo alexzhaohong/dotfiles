@@ -9,6 +9,7 @@ It mainly targets macOS systems (should install on e.g. Ubuntu as well for many 
 - Minimal efforts to install everything, using a [Makefile](./Makefile)
 - Mostly based around Homebrew, Caskroom and Node.js, latest Bash + GNU Utils
 - Great [Window management](./config/hammerspoon/README.md) (using Hammerspoon)
+- Easier window management using Rectangle
 - Fast and colored prompt
 - Updated macOS defaults
 - Well-organized and easy to customize
