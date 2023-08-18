@@ -1,3 +1,6 @@
+local hyper = {"⌘", "⌥", "⌃"}
+local mash = {"⌥", "⌃"}
+
 hs.grid.setGrid'3x3'
 hs.grid.setMargins("0,0")
 hs.window.animationDuration = 0

@@ -1,4 +1,5 @@
-mash = {"⌘", "⌥", "⌃"}
+hyper = {"⌘", "⌥", "⌃"}
+mash = {"⌥", "⌃"}
 
 require "apps"
 require "grid"

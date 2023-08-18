@@ -1,6 +1,6 @@
 # Hammerspoon Configuration
 
-The hyper key is defined as `⌘ + ⌥ + ⌃` (control + option + command). Press this plus the defined key:
+The mash key is defined as `⌘ + ⌥` (control + option + command). Press this plus the defined key:
 
 | Key | Action        |
 | --- | ------------- |
