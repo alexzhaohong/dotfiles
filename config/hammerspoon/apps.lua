@@ -1,30 +1,32 @@
-local hyper = {"⌘", "⌥", "⌃"}
-local mash = {"⌥", "⌃"}
-
-local function toggleApplication(name)
-  local app = hs.application.find(name)
-  if not app or app:isHidden() then
-    hs.application.launchOrFocus(name)
-  elseif hs.application.frontmostApplication() ~= app then
-    app:activate()
-  else
-    app:hide()
-  end
+local function toggleApplication(bundleID)
+    local app = hs.application.find(bundleID)
+    
+    if not app or app:isHidden() then
+        hs.application.launchOrFocusByBundleID(bundleID)
+    elseif hs.application.frontmostApplication() ~= app then
+        app:activate()
+    else
+        app:hide()
+    end
 end
 
+-- find bundleID by hs.application'hint':bundleID() in Hammerspoon console
 -- browser
-hs.hotkey.bind(hyper, "g", function() toggleApplication("Google Chrome") end)
-hs.hotkey.bind(hyper, "s", function() toggleApplication("Safari") end)
-hs.hotkey.bind(hyper, "a", function() toggleApplication("Arc") end)
+hs.hotkey.bind(hyper, "g", function() toggleApplication("com.google.Chrome") end)
+hs.hotkey.bind(hyper, "s", function() toggleApplication("com.apple.Safari") end)
+hs.hotkey.bind(hyper, "a", function() toggleApplication("company.thebrowser.Browser") end)
 
 -- other
-hs.hotkey.bind(hyper, "c", function() toggleApplication("Visual Studio Code") end)
-hs.hotkey.bind(hyper, "f", function() toggleApplication("Finder") end)
-hs.hotkey.bind(hyper, "m", function() toggleApplication("Mail") end)
-hs.hotkey.bind(hyper, "p", function() toggleApplication("System Settings") end)
+hs.hotkey.bind(hyper, "f", function() toggleApplication("com.apple.finder") end)
+hs.hotkey.bind(hyper, "m", function() toggleApplication("com.apple.mail") end)
+hs.hotkey.bind(hyper, "p", function() toggleApplication("com.apple.systempreferences") end)
 
 -- dev work
-hs.hotkey.bind(hyper, "`", function() toggleApplication("Terminal") end)
-hs.hotkey.bind(hyper, "w", function() toggleApplication("Warp") end)
-hs.hotkey.bind(hyper, "t", function() toggleApplication("Sublime Text") end)
-hs.hotkey.bind(hyper, "m", function() toggleApplication("Sublime Merge") end)
+hs.hotkey.bind(hyper, "v", function() toggleApplication("com.microsoft.VSCode") end)
+hs.hotkey.bind(hyper, "t", function() toggleApplication("com.apple.Terminal") end)
+hs.hotkey.bind(hyper, "w", function() toggleApplication("dev.warp.Warp-Stable") end)
+hs.hotkey.bind(hyper, "u", function() toggleApplication("com.sublimetext.4") end)
+hs.hotkey.bind(hyper, "m", function() toggleApplication("com.sublimemerge") end)
+
+-- social
+hs.hotkey.bind(hyper, "d", function() toggleApplication("com.hnc.Discord") end)
