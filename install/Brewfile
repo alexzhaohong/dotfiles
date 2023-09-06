@@ -3,48 +3,50 @@ tap "homebrew/core"
 tap "lotyp/homebrew-formulae"
 
 # core/dotfiles
-brew "bats-core"
-brew "coreutils"
-brew "lotyp/formulae/dockutil"
-brew "mackup"
-brew "nano"
-brew "stow"
-brew "thefuck"
-brew "topgrade"
+brew "bats-core" # Run Bash Automated Testing System with: $ bats mytest.bats
+brew "coreutils" # Use GNU ls with color: $ gls --color
+brew "lotyp/formulae/dockutil" # $ dockutil --add /Applications/Safari.app
+brew "mackup" # Backup application settings: $ mackup backup
+brew "nano" # Edit a file: $ nano filename.txt
+brew "neovim" # Edit a file: $ nvim filename.txt
+brew "stow" # Symlink dotfiles from dir: $ stow dir_name
+brew "thefuck" # Correct previous command: $ thefuck
+brew "topgrade" # Upgrade everything: $ topgrade
 
 # fs/network
-brew "bat"
-brew "croc"
-brew "httpie"
-brew "ssh-copy-id"
-brew "tree"
-brew "unar"
-brew "wget"
-brew "zoxide"
+brew "bat" # Display a file with syntax highlighting: $ bat filename.txt
+brew "croc" # Send a file securely: $ croc filename.txt
+brew "httpie" # Make an HTTP GET request: $ http example.com
+brew "ssh-copy-id" # Copy SSH key to host: $ ssh-copy-id user@host
+brew "tree" # Display directory as tree: $ tree dir_name
+brew "unar" # Unarchive a file: $ unar filename.zip
+brew "wget" # Download a file: $ wget http://example.com/file.txt
+brew "zoxide" # Quickly navigate to a directory: $ zi dir_name
 
 # search/grep/diff
-brew "diff-so-fancy"
-brew "difftastic"
-brew "fd"
-brew "fzf"
-brew "gnu-sed"
-brew "grep"
-brew "jq"
-brew "psgrep"
-brew "the_silver_searcher"
+brew "diff-so-fancy" # Improve diff output: $ git diff | diff-so-fancy
+brew "difftastic" # Compare files: $ difftastic file1.txt file2.txt
+brew "fd" # Find a file named 'example': $ fd example
+brew "fzf" # Fuzzy search through files: $ cat file.txt | fzf
+brew "gnu-sed" # Replace 'old' with 'new' in a file: $ gsed 's/old/new/g' file.txt
+brew "grep" # Search for 'pattern' in a file: $ grep 'pattern' file.txt
+brew "jq" # Parse JSON: $ echo '{"key": "value"}' | jq '.key'
+brew "psgrep" # Search for processes: $ psgrep pattern
+brew "the_silver_searcher" # Search code for 'pattern': $ ag 'pattern'
 
 # languages/tools
 brew "fnm" # Fast and simple Node.js version manager
-brew "gh"
-brew "python"
-brew "rust"
-brew "shellcheck"
+brew "gh" # View GitHub issues: $ gh issue list
+brew "python" # Start Python REPL: $ python3
+brew "rustup" # Install latest stable Rust: $ rustup install stable
+brew "shellcheck" # Check shell script: $ shellcheck script.sh
 
 # media
-brew "ffmpeg"
-brew "imagemagick"
-brew "uni"
-brew "webp"
+brew "ffmpeg" # Convert video format: $ ffmpeg -i input.mp4 output.avi
+brew "imagemagick" # Convert image format: $ convert input.jpg output.png
+brew "uni" # identify, search, emoji Unicode $ uni emoji -f all smile
+brew "webp" # Convert PNG to WebP: $ cwebp input.png -o output.webp
 
 # misc
 brew "grip" # GitHub Markdown previewer $ cd myrepo $ grip -b
+brew "neofetch" # Show off your terminal theme with $ neofetch

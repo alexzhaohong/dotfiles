@@ -2,20 +2,34 @@ tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 
-cask "ngrok" # fastest way to expose local web servers to the internet
-cask "docker" # container orchestration
-cask "dropbox" # cloud storage
+# Web Development and Cloud Tools
+cask "ngrok" # Expose local server quickly: $ ngrok http 80
+cask "docker" # Run a container: $ docker run hello-world
+cask "dropbox" # Sync and backup files to the cloud
+cask "visual-studio-code" # Code and debug in an IDE
+
+# Fonts for Development
+cask "font-fira-code" # Use Fira Mono for better ligature representation
+cask "font-hack" # Use this typeface in terminal for clear readability
+
+# Internet Browsers
 cask "firefox" # Internet browser by Mozilla
-cask "font-fira-code" # Fira Mono, adding ligatures for common programming multi-character combinations
-cask "font-hack" # workhorse typeface for source code
+cask "arc" # Internet browser by the Browser Company
 cask "google-chrome" # Internet browser
-cask "google-chrome-canary" # nightly builds for developers
-cask "hammerspoon" # automation keybinds
-cask "rectangle" # windows management
-cask "maccy" # clipboard manager for macOS
-cask "raycast" # extendable Spotlight launcher
-cask "slack" # messaging app
-cask "sourcetree" # Git client
-cask "spotify" # music player
-cask "visual-studio-code" # IDE
-cask "vlc" # cross-platform multimedia player
+cask "google-chrome-canary" # Test web pages with latest browser features
+
+# Productivity and System Tools
+cask "hammerspoon" # Automate keybinds and tasks with Lua scripts
+cask "rectangle" # Manage window size and position using hotkeys
+cask "karabiner-elements" # Customize key behaviors
+cask "maccy" # Access clipboard history
+cask "keycastr" # Display keystrokes for screencasts
+cask "raycast" # Launch applications, scripts, and more in Spotlight
+
+# Communication and Collaboration
+cask "slack" # Communicate with teams
+cask "sourcetree" # Manage git repositories
+
+# Media and Entertainment
+cask "spotify" # Listen to music
+cask "vlc" # Play media files: $ vlc filename.mp4
