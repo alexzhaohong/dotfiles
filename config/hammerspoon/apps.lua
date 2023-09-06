@@ -10,7 +10,7 @@ local function toggleApplication(bundleID)
     end
 end
 
--- find bundleID by hs.application'hint':bundleID() in Hammerspoon console
+-- find bundleID in Hammerspoon console by hs.application'hint':bundleID()
 -- browser
 hs.hotkey.bind(hyper, "g", function() toggleApplication("com.google.Chrome") end)
 hs.hotkey.bind(hyper, "s", function() toggleApplication("com.apple.Safari") end)
@@ -26,7 +26,9 @@ hs.hotkey.bind(hyper, "v", function() toggleApplication("com.microsoft.VSCode") 
 hs.hotkey.bind(hyper, "t", function() toggleApplication("com.apple.Terminal") end)
 hs.hotkey.bind(hyper, "w", function() toggleApplication("dev.warp.Warp-Stable") end)
 hs.hotkey.bind(hyper, "u", function() toggleApplication("com.sublimetext.4") end)
-hs.hotkey.bind(hyper, "m", function() toggleApplication("com.sublimemerge") end)
+hs.hotkey.bind(hyper, "e", function() toggleApplication("com.sublimemerge") end)
 
 -- social
 hs.hotkey.bind(hyper, "d", function() toggleApplication("com.hnc.Discord") end)
+hs.hotkey.bind(hyper, "m", function() toggleApplication("com.apple.MobileSMS") end)
+hs.hotkey.bind(hyper, "help", function() toggleApplication("com.spotify.client") end) -- help is insert key
